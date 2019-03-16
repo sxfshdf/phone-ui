@@ -1,0 +1,26 @@
+
+
+@font-face {
+  font-family: 'PFBold';
+  src: url("../fonts/PingFang_Bold_0.ttf");
+}
+@font-face {
+  font-family: 'PFExtraLight';
+  src: url("../fonts/PingFang_ExtraLight_0.ttf");
+}
+@font-face {
+  font-family: 'PFHeavy';
+  src: url("../fonts/PingFang_Heavy_0.ttf");
+}
+@font-face {
+  font-family: 'PFLight';
+  src: url("../fonts/PingFang_Light_0.ttf");
+}
+@font-face {
+  font-family: 'PFMedium';
+  src: url("../fonts/PingFang_Medium_0.ttf");
+}
+@font-face {
+  font-family: 'PFRegular';
+  src: url("../fonts/PingFang_Regular_0.ttf");
+}

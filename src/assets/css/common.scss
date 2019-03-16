@@ -1,0 +1,10 @@
+* { padding: 0; margin: 0; font-family: PFRegular, PFExtraLight, PFBold, PFHeavy, PFLight, PFMedium;}
+*, *::after, *::before { box-sizing: border-box; }
+ul, ol{ list-style: none}
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

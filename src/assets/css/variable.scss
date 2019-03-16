@@ -1,0 +1,12 @@
+
+@function px($npx){
+  @return $npx/375 * 100vw
+}
+
+@mixin positionCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+$main-color: #616B8D;
+$tab-selected-color: #14BAD5;
