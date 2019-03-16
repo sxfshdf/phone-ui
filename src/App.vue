@@ -22,7 +22,7 @@ export default {
 <style lang="scss">
   @import  './assets/css/variable.scss';
 #app {
-  padding: px(20);
+  /*padding: px(20);*/
   background: #fafafa;
   min-height: 100vh;
 }

@@ -101,7 +101,7 @@
 
 
   .collections {
-    padding-top: px(54);
+    padding: px(54) px(20) px(40) px(20);
     header {
       margin-top: px(10);
       .title {

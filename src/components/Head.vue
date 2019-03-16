@@ -48,7 +48,7 @@
     background: #fafafa;
     z-index: 1;
     &.detail {
-      background: #2f4aa0;
+      background: $detail-bg;
       .title {
         color: #fff;
       }
