@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <Head :name="$route.name"></Head>
+    <Head :name="$route.name" :title="title"></Head>
     <div class="content">
       <section class="head">
         <div class="wrapper">
@@ -13,7 +13,71 @@
           </div>
         </div>
       </section>
-      <section id="chart"></section>
+      <section class="body">
+        <div class="chart-title">
+          February 2019
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-ellipsis"></use>
+          </svg>
+        </div>
+        <div id="chart"></div>
+        <div class="data">
+          <ul>
+            <li>
+              <div class="data-wrapper">
+                <div class="data-title">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
+                  </svg>
+                  Readers
+                </div>
+                <div class="number">
+                  4,900
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="data-wrapper">
+                <div class="data-title">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-heart"></use>
+                  </svg>
+                  Likes
+                </div>
+                <div class="number">
+                  8,500
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="data-wrapper">
+                <div class="data-title">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-share"></use>
+                  </svg>
+                  Shares
+                </div>
+                <div class="number">
+                  5,400
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="data-wrapper">
+                <div class="data-title">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-star"></use>
+                  </svg>
+                  Saves
+                </div>
+                <div class="number">
+                  4,200
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -25,6 +89,11 @@
     components: {
       Head
     },
+    data(){
+      return {
+        title: "Article Insight"
+      }
+    },
     created(){
       console.log(this.$route.name)
     },
@@ -33,6 +102,13 @@
         const echarts = require('echarts');
         const myChart = echarts.init(document.getElementById('chart'),'light')
         myChart.setOption({
+          // title: {
+          //   text: 'February 2019',
+          //   textStyle: {
+          //     color: '#4f5b83',
+          //     fontSize:'16',
+          //   }
+          // },
           tooltip : {
             trigger: 'axis',
             axisPointer : {          // 坐标轴指示器，坐标轴触发有效
@@ -47,8 +123,8 @@
           grid: {
             left: '-4%',
             right: '4%',
-            bottom: '3%',
-            top: '4%',
+            bottom: '2%',
+            top: '0',
             containLabel: true
           },
           yAxis:  {
@@ -173,10 +249,74 @@
           }
         }
       }
-      #chart {
-        height: px(300);
-        width: px(375);
+      .body {
+        .chart-title {
+          padding: px(20) px(20);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: px(18);
+          font-family: PFHeavy;
+          color: $detail-bg;
+          .icon {
+            width: px(22);
+            height: px(22);
+          }
+        }
+        #chart {
+          height: px(280);
+          width: px(375);
+        }
+        .data {
+          padding: px(20);
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              @include positionCenter;
+              width: 50%;
+              height: px(120);
+              &:nth-child(1) {
+                border-right: 1px solid $detail-data-border;
+                border-bottom: 1px solid $detail-data-border;
+              }
+              &:nth-child(2) {
+                border-left: 1px solid $detail-data-border;
+                border-bottom: 1px solid $detail-data-border;
+              }
+              &:nth-child(3) {
+                border-right: 1px solid $detail-data-border;
+                border-top: 1px solid $detail-data-border;
+              }
+              &:nth-child(4) {
+                border-left: 1px solid $detail-data-border;
+                border-top: 1px solid $detail-data-border;
+              }
+              .data-wrapper {
+                text-align: center;
+                .data-title {
+                  font-size: px(18);
+                  font-family: PFMedium;
+                  color: #ced1dd;
+                  .icon {
+                    width: px(20);
+                    height: px(20);
+                    fill: $detail-bg;
+                    margin-right: px(8);
+                  }
+                }
+                .number {
+                  font-size: px(32);
+                  color: $detail-bg;
+                  font-family: PFBold;
+                  margin-top: px(10);
+                }
+              }
+            }
+          }
+        }
       }
+
     }
   }
 </style>

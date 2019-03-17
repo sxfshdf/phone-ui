@@ -1,6 +1,6 @@
 <template>
   <div class="collections">
-    <Head :name="$route.name"></Head>
+    <Head :name="$route.name" :title="title"></Head>
     <header>
       <div class="title">Your all collections</div>
       <div class="title">is here</div>
@@ -72,7 +72,8 @@
     data(){
       return {
         tabsList: ['All','Sport','Favourite','Science'],
-        selected: 'All'
+        selected: 'All',
+        title: 'Your Collections'
       }
     },
     components: {
@@ -101,14 +102,14 @@
 
 
   .collections {
-    padding: px(54) px(20) px(40) px(20);
+    padding: px(54) px(20) px(30) px(20);
     header {
-      margin-top: px(10);
+      margin-top: px(20);
       .title {
         font-size: px(30);
         font-family: PFBold;
         color: #233461;
-        
+
       }
     }
     .tabs {

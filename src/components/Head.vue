@@ -7,7 +7,7 @@
       >
         <use xlink:href="#icon-left"></use>
       </svg>
-      Your Collections
+      {{title}}
     </div>
     <svg class="icon search" aria-hidden="true" v-if="name==='collections'">
       <use xlink:href="#icon-align-right"></use>
@@ -22,8 +22,13 @@
   export default {
     name: "Head",
     props: {
-      name: String,
-      default: null
+      name: {
+        type: String,
+        default: null
+      },
+      title: {
+        type: String
+      }
     },
     methods: {
       goBack(){
